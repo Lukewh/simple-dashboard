@@ -1,0 +1,6 @@
+node_modules
+/app/config/env.js
+jspm_packages
+dist
+data
+config.js

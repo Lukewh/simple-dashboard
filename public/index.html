@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui">
+        <title>[kotrd] Demo Stats</title>
+        <link rel="stylesheet" href="jspm_packages/github/necolas/normalize.css@3.0.3/normalize.css" />
+        <link rel="stylesheet" href="/static/styles.css" />
+        <link rel="icon" type="image/png" href="/static/images/favicon.png" />
+    </head>
+    <body>
+        <div class="main"></div>
+        <!-- replace:<script src="/awi.min.js"></script> -->
+        <script src="/jspm_packages/system.js"></script>
+        <script src="/config.js"></script>
+        <script>
+            System.import('app/main');
+        </script>
+        <!-- endreplace -->
+    </body>
+</html>
