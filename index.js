@@ -2,7 +2,6 @@ const express = require('express');
 const systats = require('systats');
 const diskspace = require('diskspace');
 const bodyParser = require('body-parser');
-const git = require('simple-git')('/home/luke/juju-gui');
 const app = express();
 const WebSocket = require('ws');
 const http = require('http');
@@ -31,36 +30,6 @@ app.get('/data', (req, res) => {
         res.status(200).json(data);
       });
     });
-  });
-  // nodestat.read(function (result) {
-  //   function add(a, b) {
-  //     return a + b;
-  //   }
-  //   let cpu = result.cpu.reduce(add, 0);
-  //   data = true;
-  //   resolve(result);
-  //   // let cpu = result.cpu.reduce((a, b) => {return a+b;}, 0);
-  //   // cpu = cpu / result.cpu.length;
-  //   // const stats = {
-  //   //   time: new Date().getTime(),
-  //   //   cpu: 100 - cpu,
-  //   //   load: data.load,
-  //   //   disk: data.disk.total.usage
-  //   // };
-  //   // data = stats;
-  //   // resolve(stats);
-  // });
-});
-
-app.post('/switchRepo', (req, res) => {
-  const user = req.body.repo.split(':')[0];
-  const branch = req.body.repo.split(':')[1];
-  git.fetch(user, branch).checkout(`${user}/${branch}`, (err, result) => {
-    if (err) {
-      res.status(500).json({message: err});
-      return;
-    }
-    res.status(200).json(result);
   });
 });
 

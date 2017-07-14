@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import CPUView from './cpu';
 import RAMView from './ram';
 import DiskView from './disk';
-import SwitchRepo from './switch-repo';
 
 const COLOUR = {
   ERROR: '#c7162b',
@@ -150,7 +149,6 @@ class MainView extends React.Component {
   render() {
     return (
       <div>
-        <SwitchRepo />
         <CPUView data={this.state.cpu} />
         <RAMView data={this.state.ram} />
         <DiskView title="/" data={this.state.disks['/']} />
